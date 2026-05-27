@@ -4,39 +4,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Student Marks Form</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    fieldset {
+      width: 320px;
+      background-color: white;
+      border: 2px solid #4a90e2;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    legend {
+      color: #4a90e2;
+      font-size: 20px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 6px;
+      margin-top: 5px;
+    }
+
+    .avg {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
 </head>
 
 <body>
-	<fieldset>
-		<legend><b>Enter your Marks</b></legend>
-		<form action="/action_page.php"
-			oninput = "x.value=(parseInt(m1.value)+parseInt(m2.value)+parseInt(m3.value))/3">
-			<label>Name</label><br>
-			<input type="text" id="name"><br><br>
-			<label>Enter Marks</label><br>
-			<select name="Subject" id="subject">
-				<option value="Maths">Maths</option>
-				<option value="English">English</option>
-				<option value="Science">Science</option>
-			</select>
-			<input type="number" id="m1" name="m1"><br><br>
-			<select name="Subject2" id="subject2">
-				<option value="Maths">Maths</option>
-				<option value="English">English</option>
-				<option value="Science">Science</option>
-			</select>
-			<input type="number" id="m2" name="m2"><br><br>
-			<select name="Subject3" id="subject3">
-				<option value="Maths">Maths</option>
-				<option value="English">English</option>
-				<option value="Science">Science</option>
-			</select>
-			<input type="number" id="m3" name="m3"><br><br>
-			Average: <output name="x" for="m1 m2 m3"></output>
-		</form>
-	</fieldset>
+
+  <fieldset>
+    <legend><b>Student Report</b></legend>
+
+    <form
+      oninput="x.value=(parseInt(m1.value||0)+parseInt(m2.value||0)+parseInt(m3.value||0))/3">
+
+      <label>Student Name</label><br>
+      <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+      <label>Class</label><br>
+      <input type="text" id="class" placeholder="Enter Class"><br><br>
+
+      <label>Subject 1</label><br>
+      <select id="subject1">
+        <option>Maths</option>
+        <option>English</option>
+        <option>Science</option>
+      </select>
+
+      <input type="number" id="m1" name="m1" placeholder="Enter Marks"><br><br>
+
+      <label>Subject 2</label><br>
+      <select id="subject2">
+        <option>Maths</option>
+        <option>English</option>
+        <option>Science</option>
+      </select>
+
+      <input type="number" id="m2" name="m2" placeholder="Enter Marks"><br><br>
+
+      <label>Subject 3</label><br>
+      <select id="subject3">
+        <option>Maths</option>
+        <option>English</option>
+        <option>Science</option>
+      </select>
+
+      <input type="number" id="m3" name="m3" placeholder="Enter Marks"><br><br>
+
+      <div class="avg">
+        Average Marks:
+        <output name="x" for="m1 m2 m3"></output>
+      </div>
+
+    </form>
+  </fieldset>
+
 </body>
 
 </html>
